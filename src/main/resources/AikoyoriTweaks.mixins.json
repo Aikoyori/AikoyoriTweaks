@@ -1,0 +1,31 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "xyz.aikoyori.aikoyoritweaks.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "AxeItemMixin",
+    "BerryBushMixin",
+    "BlockMixin",
+    "CauldronBehaviourMixin",
+    "ChorusMixin",
+    "CocoaBeanBlockMixin",
+    "CreeperMixin",
+    "CropsBlockMixin",
+    "FarmLandMixin",
+    "FluidBlockMixin",
+    "GameRule$BooleanAccessor",
+    "GameRule$IntAccessor",
+    "GameRuleMixin",
+    "LavaFluidMixin",
+    "LeavesMixin",
+    "PearlMixin"
+  ],
+  "client": [
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
