@@ -27,7 +27,7 @@ public abstract class FluidBlockMixin extends Block implements FluidDrainable {
         if(world.getGameRules().getBoolean(AikoyoriTweaks.STONE_GENERATOR_VARIATION))
         {
 
-            Block block2 = BlockCheckHelper.cobbleGenReplace(Blocks.COBBLESTONE,block,world,pos);
+            Block block2 = BlockCheckHelper.cobbleGenReplace(block,block,world,pos);
 
             world.setBlockState(pos, block2.getDefaultState());
 

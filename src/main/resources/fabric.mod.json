@@ -7,7 +7,7 @@
   "authors": [],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/AikoyoriTweaks/icon.png",
+  "icon": "assets/aikoyoritweaks/aikotweaks32.png",
   "environment": "*",
   "entrypoints": {
     "client": [
