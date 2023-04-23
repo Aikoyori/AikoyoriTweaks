@@ -53,6 +53,7 @@ public abstract class CropsBlockMixin extends PlantBlock implements Fertilizable
                 });
                 //dropStacks(world,pos);
                 world.setBlockState(pos,state.getBlock().getDefaultState());
+                return ActionResult.SUCCESS;
             }
         }
         return super.onUse(state, world, pos, player, hand, hit);
