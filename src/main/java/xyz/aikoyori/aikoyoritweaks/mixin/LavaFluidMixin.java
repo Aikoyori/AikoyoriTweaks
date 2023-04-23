@@ -28,15 +28,8 @@ public abstract class LavaFluidMixin extends FlowableFluid {
         {
             if(world.getServer().getGameRules().getBoolean(AikoyoriTweaks.STONE_GENERATOR_VARIATION))
             {
-                Block block = Blocks.STONE;
-                if(block == Blocks.COBBLESTONE)
-                {
-                    if (BlockCheckHelper.checkAroundIfBlockExist(world,Blocks.SOUL_SOIL,pos.down()) || BlockCheckHelper.checkAroundIfBlockExist(world,Blocks.SOUL_SAND,pos.down()) ) {
-                        block = Blocks.BLACKSTONE;
-                    } else if (BlockCheckHelper.checkAroundIfBlockExist(world,Blocks.MAGMA_BLOCK,pos.down())) {
-                        block = Blocks.DEEPSLATE;
-                    }
-                }
+                Block block = BlockCheckHelper.cobbleGenReplace(Blocks.STONE,Blocks.COBBLESTONE,world,pos);
+
 
                 world.setBlockState(pos, block.getDefaultState(),Block.NOTIFY_ALL);
 

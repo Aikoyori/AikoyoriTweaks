@@ -3,6 +3,7 @@ package xyz.aikoyori.aikoyoritweaks.mixin;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SweetBerryBushBlock;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -20,7 +21,7 @@ public class BerryBushMixin {
     @Inject(cancellable = true,locals = LocalCapture.CAPTURE_FAILSOFT,method = "onEntityCollision",at=@At(value = "INVOKE",target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"))
     void noDamageForBerryBush$among(BlockState state, World world, BlockPos pos, Entity entity, CallbackInfo ci, double d, double e)
     {
-        if(!world.getGameRules().getBoolean(AikoyoriTweaks.BERRY_BUSH_DAMAGE)) ci.cancel();
+        if(!world.getGameRules().getBoolean(AikoyoriTweaks.BERRY_BUSH_DAMAGE) && entity instanceof PlayerEntity) ci.cancel();
     }
 
 }

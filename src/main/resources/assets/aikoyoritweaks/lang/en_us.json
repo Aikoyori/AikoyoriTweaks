@@ -1,0 +1,12 @@
+{
+  "gamerule.aikoyoriTweaks_rapidFoliageBreak": "Foliage Breaks Rapidly",
+  "gamerule.aikoyoriTweaks_allowDestripping": "Allow Destripping of logs",
+  "gamerule.aikoyoriTweaks_doesBerryBushDamage": "Berry Bush Damage",
+  "gamerule.aikoyoriTweaks_doesCropTrampling": "Allow crops trampling at all",
+  "gamerule.aikoyoriTweaks_teleportItemCooldown": "Teleport Item Cooldown in ticks",
+  "gamerule.aikoyoriTweaks_rapidFoliageBreak": "Foliage Breaks Rapidly",
+  "gamerule.aikoyoriTweaks_cauldronsWashMoreThings": "Cauldron can wash more things",
+  "gamerule.aikoyoriTweaks_allowHarvestingByRightClick": "Allow crop harvest with right click",
+  "gamerule.aikoyoriTweaks_doCreeperGriefing": "Creeper Explosion deals block damage",
+  "gamerule.aikoyoriTweaks_moreStoneGenerator": "Cobblestone Generator can generate more than cobblestone"
+}
