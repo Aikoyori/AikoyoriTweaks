@@ -6,12 +6,12 @@
   "mixins": [
     "AxeItemMixin",
     "BerryBushMixin",
-    "BlockMixin",
     "CauldronBehaviourMixin",
     "ChorusMixin",
     "CocoaBeanBlockMixin",
     "CreeperMixin",
     "CropsBlockMixin",
+    "ExplosionMixin",
     "FarmLandMixin",
     "FluidBlockMixin",
     "GameRule$BooleanAccessor",

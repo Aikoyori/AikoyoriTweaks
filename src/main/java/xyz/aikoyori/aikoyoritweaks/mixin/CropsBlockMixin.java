@@ -7,6 +7,7 @@ import net.minecraft.block.PlantBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.context.LootContext;
+import net.minecraft.loot.context.LootContextParameterSet;
 import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
@@ -41,7 +42,8 @@ public abstract class CropsBlockMixin extends PlantBlock implements Fertilizable
             {
 
                 ArrayList<ItemStack> stacker = new ArrayList<>();
-                List<ItemStack> stacks = state.getDroppedStacks(new LootContext.Builder((ServerWorld) world).parameter(LootContextParameters.BLOCK_STATE,state).parameter(LootContextParameters.ORIGIN,new Vec3d(pos.getX(),pos.getY(),pos.getZ())).parameter(LootContextParameters.TOOL,player.getMainHandStack()));
+                //List<ItemStack> stacks = state.getDroppedStacks(new LootContext.Builder((ServerWorld) world).parameter(LootContextParameters.BLOCK_STATE,state).parameter(LootContextParameters.ORIGIN,new Vec3d(pos.getX(),pos.getY(),pos.getZ())).parameter(LootContextParameters.TOOL,player.getMainHandStack()));
+                List<ItemStack> stacks = state.getDroppedStacks(new LootContextParameterSet.Builder((ServerWorld) world).add(LootContextParameters.BLOCK_STATE,state).addOptional(LootContextParameters.ORIGIN,new Vec3d(pos.getX(),pos.getY(),pos.getZ())).addOptional(LootContextParameters.TOOL,player.getMainHandStack()));
                 AtomicBoolean isTakenoff = new AtomicBoolean(false);
                 stacks.stream().forEach(itemStack -> {
                     if(itemStack.getItem() == crop.getSeedsItem() && !isTakenoff.get())

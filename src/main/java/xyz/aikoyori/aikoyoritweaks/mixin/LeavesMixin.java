@@ -47,7 +47,7 @@ public abstract class LeavesMixin {
         }
     }
 
-    @Inject(method = "getStateForNeighborUpdate",cancellable = true,locals = LocalCapture.CAPTURE_FAILSOFT,at=@At(value = "INVOKE",target = "Lnet/minecraft/world/WorldAccess;createAndScheduleBlockTick(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/Block;I)V"))
+    @Inject(method = "getStateForNeighborUpdate",cancellable = true,locals = LocalCapture.CAPTURE_FAILSOFT,at=@At(value = "INVOKE",target = "Lnet/minecraft/world/WorldAccess;scheduleBlockTick(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/Block;I)V"))
     void nomoreupdateshit(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos, CallbackInfoReturnable<BlockState> cir){
         if(!world.isClient())
         {
@@ -111,7 +111,7 @@ public abstract class LeavesMixin {
     {
             LeavesBlock leaf = (LeavesBlock) (Object)this;
 
-            world.createAndScheduleBlockTick(pos,(LeavesBlock)(Object)this,2);
+            world.scheduleBlockTick(pos,(LeavesBlock)(Object)this,2);
 
     }
 }

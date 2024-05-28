@@ -28,7 +28,7 @@ public class AxeItemMixin {
 
     ServerWorld world;
 
-    @Inject(method = "<init>",locals = LocalCapture.CAPTURE_FAILSOFT,at = @At(value = "INVOKE",shift = At.Shift.AFTER,target = "Lnet/minecraft/item/MiningToolItem;<init>(FFLnet/minecraft/item/ToolMaterial;Lnet/minecraft/tag/TagKey;Lnet/minecraft/item/Item$Settings;)V"))
+    @Inject(method = "<init>",locals = LocalCapture.CAPTURE_FAILSOFT,at = @At(value = "INVOKE",shift = At.Shift.AFTER,target = "Lnet/minecraft/item/MiningToolItem;<init>(FFLnet/minecraft/item/ToolMaterial;Lnet/minecraft/registry/tag/TagKey;Lnet/minecraft/item/Item$Settings;)V"))
     private void backwardsStripping(ToolMaterial material, float attackDamage, float attackSpeed, Item.Settings settings, CallbackInfo ci){
         for(Map.Entry<Block, Block> i:AxeItem.STRIPPED_BLOCKS.entrySet())
         {

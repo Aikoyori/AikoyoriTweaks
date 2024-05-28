@@ -4,7 +4,7 @@
   "version": "${version}",
   "name": "Aikoyori Tweaks",
   "description": "",
-  "authors": [],
+  "authors": ["Aikoyori"],
   "contact": {},
   "license": "MIT",
   "icon": "assets/aikoyoritweaks/aikotweaks32.png",
@@ -21,7 +21,7 @@
     "AikoyoriTweaks.mixins.json"
   ],
   "depends": {
-    "minecraft": "1.19.2"
+    "minecraft": "1.20.1"
   },
 
   "accessWidener" : "aikoyoritweaks.accesswidener"

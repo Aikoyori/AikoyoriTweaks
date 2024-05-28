@@ -22,7 +22,7 @@ public abstract class FarmLandMixin extends Block {
         super(settings);
     }
 
-    @Inject(method = "onLandedUpon",cancellable = true,locals = LocalCapture.CAPTURE_FAILSOFT,at = @At(value = "INVOKE",target = "Lnet/minecraft/block/FarmlandBlock;setToDirt(Lnet/minecraft/block/BlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V"))
+    @Inject(method = "onLandedUpon",cancellable = true,locals = LocalCapture.CAPTURE_FAILSOFT,at = @At(value = "INVOKE",target = "Lnet/minecraft/block/FarmlandBlock;setToDirt(Lnet/minecraft/entity/Entity;Lnet/minecraft/block/BlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V"))
     void nomoredirtsetifgameruleisfalse(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance, CallbackInfo ci)
     {
         if(!world.getGameRules().getBoolean(AikoyoriTweaks.CROPS_TRAMPLE))

@@ -4,17 +4,18 @@ import net.minecraft.block.*;
 import net.minecraft.block.cauldron.CauldronBehavior;
 import net.minecraft.item.BedItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.registry.Registry;
 import xyz.aikoyori.aikoyoritweaks.AikoyoriTweaks;
-import xyz.aikoyori.aikoyoritweaks.accessor.BlockMixin$MaterialAccessor;
 
 public class CauldronHelper {
     public static CauldronBehavior CLEAN_WOOL = (state, world, pos, player, hand, stack) -> {
         Block block = Block.getBlockFromItem(stack.getItem());
-        if (!(((BlockMixin$MaterialAccessor)(Object)block).getMaterial() == Material.WOOL)) {
+        if (!Registries.BLOCK.getId(block).getPath().contains("_wool")){
             return ActionResult.PASS;
         } else {
             if (!world.isClient && world.getGameRules().getBoolean(AikoyoriTweaks.MORE_CAULDRON_CLEANER)) {
@@ -95,7 +96,7 @@ public class CauldronHelper {
     public static CauldronBehavior CLEAN_TERRACOTTA = (state, world, pos, player, hand, stack) -> {
         Block block = Block.getBlockFromItem(stack.getItem());
 
-        if (!(Registry.ITEM.getId(stack.getItem()).getPath().endsWith("terracotta"))) {
+        if (!Registries.BLOCK.getId(block).getPath().contains("_terracotta") || Registries.BLOCK.getId(block).getPath().contains("_glazed_terracotta") ){
             return ActionResult.PASS;
         } else {
             if (!world.isClient && world.getGameRules().getBoolean(AikoyoriTweaks.MORE_CAULDRON_CLEANER)) {

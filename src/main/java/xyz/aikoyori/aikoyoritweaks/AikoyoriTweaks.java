@@ -7,7 +7,8 @@ import net.minecraft.item.BedItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.world.GameRules;
-import xyz.aikoyori.aikoyoritweaks.accessor.BlockMixin$MaterialAccessor;
+import xyz.aikoyori.aikoyoritweaks.mixin.GameRule$BooleanAccessor;
+import xyz.aikoyori.aikoyoritweaks.mixin.GameRule$IntAccessor;
 import xyz.aikoyori.aikoyoritweaks.mixin.GameRule$BooleanAccessor;
 import xyz.aikoyori.aikoyoritweaks.mixin.GameRule$IntAccessor;
 import xyz.aikoyori.aikoyoritweaks.mixin.GameRuleMixin;
@@ -36,6 +37,8 @@ public class AikoyoriTweaks implements ModInitializer {
 
     public static final GameRules.Key<GameRules.BooleanRule> STONE_GENERATOR_VARIATION =
             GameRuleMixin.invokeRegister("aikoyoriTweaks_moreStoneGenerator", GameRules.Category.UPDATES, GameRule$BooleanAccessor.invokeCreate(false));
+   public static final GameRules.Key<GameRules.BooleanRule> CREEPER_DAMAGE_PASSIVE_MOBS =
+            GameRuleMixin.invokeRegister("aikoyoriTweaks_creeperDamagePassiveMobs", GameRules.Category.UPDATES, GameRule$BooleanAccessor.invokeCreate(true));
 
     @Override
     public void onInitialize() {

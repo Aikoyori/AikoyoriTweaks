@@ -5,6 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.loot.context.LootContext;
+import net.minecraft.loot.context.LootContextParameterSet;
 import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.property.IntProperty;
@@ -40,8 +41,9 @@ public abstract class CocoaBeanBlockMixin extends HorizontalFacingBlock implemen
             {
 
                 ArrayList<ItemStack> stacker = new ArrayList<>();
-                List<ItemStack> stacks = state.getDroppedStacks(new LootContext.Builder((ServerWorld) world).parameter(LootContextParameters.BLOCK_STATE,state).parameter(LootContextParameters.ORIGIN,new Vec3d(pos.getX(),pos.getY(),pos.getZ())).parameter(LootContextParameters.TOOL,player.getMainHandStack()));
-                stacks.stream().forEach(itemStack -> {
+                //List<ItemStack> stacks = state.getDroppedStacks(new LootContext.Builder((ServerWorld) world).parameter(LootContextParameters.BLOCK_STATE,state).parameter(LootContextParameters.ORIGIN,new Vec3d(pos.getX(),pos.getY(),pos.getZ())).parameter(LootContextParameters.TOOL,player.getMainHandStack()));
+                List<ItemStack> stacks = state.getDroppedStacks(new LootContextParameterSet.Builder((ServerWorld) world).add(LootContextParameters.BLOCK_STATE,state).addOptional(LootContextParameters.ORIGIN,new Vec3d(pos.getX(),pos.getY(),pos.getZ())).addOptional(LootContextParameters.TOOL,player.getMainHandStack()));
+                stacks.forEach(itemStack -> {
                     if(itemStack.getItem() == Items.COCOA_BEANS)
                     {
                         itemStack.setCount(itemStack.getCount()-1);
