@@ -19,7 +19,8 @@
     "GameRuleMixin",
     "LavaFluidMixin",
     "LeavesMixin",
-    "PearlMixin"
+    "PearlMixin",
+    "ZombieEntityMixin"
   ],
   "client": [
   ],

@@ -39,6 +39,8 @@ public class AikoyoriTweaks implements ModInitializer {
             GameRuleMixin.invokeRegister("aikoyoriTweaks_moreStoneGenerator", GameRules.Category.UPDATES, GameRule$BooleanAccessor.invokeCreate(false));
    public static final GameRules.Key<GameRules.BooleanRule> CREEPER_DAMAGE_PASSIVE_MOBS =
             GameRuleMixin.invokeRegister("aikoyoriTweaks_creeperDamagePassiveMobs", GameRules.Category.UPDATES, GameRule$BooleanAccessor.invokeCreate(true));
+   public static final GameRules.Key<GameRules.BooleanRule> ZOMBIE_ALWAYS_INFECT_VILLAGER =
+            GameRuleMixin.invokeRegister("aikoyoriTweaks_zombieAlwaysInfectVillagers", GameRules.Category.UPDATES, GameRule$BooleanAccessor.invokeCreate(false));
 
     @Override
     public void onInitialize() {
